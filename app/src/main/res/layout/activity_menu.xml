@@ -13,11 +13,11 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_cr"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginHorizontal="10dp"
-            android:src="@drawable/formula">
+            android:src="@drawable/formula_">
 
         </com.google.android.material.imageview.ShapeableImageView>
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -27,8 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearlayout_welcome_msg"
+        android:layout_above="@id/button_start"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="0dp"
         android:orientation="vertical">
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Please select the preferred settings:"
+            android:text="Please choose game settings:"
             android:textColor="#AE2538"
             android:textSize="20sp"
             android:textStyle="italic|bold">
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:buttonTint="#DB2D34"
+                android:buttonTint="#AE2538"
                 android:checked="true"
                 android:text="Slow"
                 android:textColor="#AE2538" />
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:buttonTint="#DB2D34"
+                android:buttonTint="#AE2538"
                 android:text="Fast"
                 android:textColor="#AE2538" />
 
@@ -72,40 +72,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:buttonTint="#DB2D34"
+                android:buttonTint="#AE2538"
                 android:text="Sensor"
                 android:textColor="#AE2538" />
         </RadioGroup>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton_game_start"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Score Table"
-            android:textColor="#AE2538" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/materialButton_Score_Table"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="178dp"
-        android:background="#AE2538"
-        android:text="Start" />
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#AE2538"
+        android:text="Start">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton_Score_Table"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
+        android:text="Score Table"
+        android:textColor="#AE2538">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+
 
 
 </RelativeLayout>

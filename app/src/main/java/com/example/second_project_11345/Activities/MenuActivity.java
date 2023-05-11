@@ -30,10 +30,9 @@ public class MenuActivity extends AppCompatActivity {
     private RadioButton radioButton_Slow;
     private RadioButton radioButton_Fast;
     private RadioButton radioButton_Sensor;
-    private Button button_start;
     private LatLng latLng;
     public TextView userDirectiveTextView;
-    private MaterialButton materialButton_Score;
+    private MaterialButton materialButton_Score,materialButton_start;
     private int delay = 700;
     private boolean sensorModeBoolean = false;
     private boolean hasGrantedLocation;
@@ -52,17 +51,17 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint({"SetTextI18n"})
     private void initAllValues() {
         Objects.requireNonNull(getSupportActionBar()).setTitle("Menu");
-        this.materialButton_Score = this.findViewById(R.id.materialButton_game_start);
+        this.materialButton_Score = this.findViewById(R.id.materialButton_Score_Table);
         this.radioButton_Slow =this.findViewById(R.id.radioButton_Slow);
         this.radioButton_Fast =this.findViewById(R.id.radioButton_Fast);
         this.radioButton_Sensor =this.findViewById(R.id.radioButton_Sensor);
-        this.button_start = this.findViewById(R.id.button_start);
+        this.materialButton_start = this.findViewById(R.id.button_start);
         userDirectiveTextView = this.findViewById(R.id.text_user_directive);
         userDirectiveTextView.setText("Please select the preferred settings:");
         this.radioButton_Slow.setText("Button mode -Slow");
         this.radioButton_Fast.setText("Button mode -Fast");
         this.radioButton_Sensor.setText("Sensor mode");
-        this.button_start.setText("Start");
+        this.materialButton_start.setText("Start");
         this.materialButton_Score.setText("Score Table");
 
         LatLng STOCKHOLM = new LatLng(59.3251172, 18.0710935);
@@ -90,7 +89,7 @@ public class MenuActivity extends AppCompatActivity {
         this.radioButton_Slow.setOnClickListener((v) -> this.setDelay(700));
         this.radioButton_Fast.setOnClickListener((v) -> this.setDelay(400));
         this.radioButton_Sensor.setOnClickListener((v) -> this.setSensorModeBoolean());
-        this.button_start.setOnClickListener((v) -> this.startGameActivity());
+        this.materialButton_start.setOnClickListener((v) -> this.startGameActivity());
     }
 
     private void setDelay(int delay) {
